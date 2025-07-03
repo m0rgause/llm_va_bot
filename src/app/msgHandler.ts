@@ -1,8 +1,9 @@
 import { Client, ContactId, Message } from "@open-wa/wa-automate";
-import { color, parsingPhoneNumber } from "@/utils";
+import { color, parsingPhoneNumber, formatTime } from "@/utils";
 import prisma from "@/config/prisma";
 import { addCustomReminder } from "./reminderHandler";
 import fetcher from "@/utils/fetcher";
+import { v4 as uuid } from "uuid";
 
 export const msgHandler = async (syaki: Client, message: Message) => {
   try {
@@ -37,9 +38,21 @@ export const msgHandler = async (syaki: Client, message: Message) => {
 ┌  Tampilkan daftar semester yang tersedia.
 └  Contoh: *!listsemester*
 
+❏ *!addsemester <semester>*
+┌  Tambah semester baru untuk.
+└  Contoh: *!addsemester 3*
+
+❏ *!deletesemester <semester>*
+┌  Hapus semester tertentu.
+└  Contoh: *!deletesemester 3*
+
 ❏  *!krs* <semester>
 ┌  Tampilkan Kartu Rencana Studi (KRS) untuk semester tertentu.
 └  Contoh: *!krs 3*
+
+❏  *!inputkrs* <semester>|<copied_data>
+┌  Input Kartu Rencana Studi (KRS) untuk semester tertentu.
+└  Contoh: *!inputkrs 3|copied_data*
 
 ❏  *!tanya* <pertanyaan>
 ┌  Ajukan pertanyaan.
@@ -52,8 +65,6 @@ export const msgHandler = async (syaki: Client, message: Message) => {
 ❏ *!help*
 ┌  Tampilkan daftar perintah yang tersedia.
 └  Contoh: *!help*
-
-
 `,
           message.id
         );
@@ -269,7 +280,7 @@ Anda juga dapat menjelajahi fitur lainnya dengan mengirimkan pesan *!help* untuk
         if (!q) {
           await syaki.reply(
             message.from,
-            `Silakan masukkan semester yang ingin ditampilkan KRS-nya dengan format: *!krs <semester>*\nContoh: *!krs Genap 2023/2024*`,
+            `Silakan masukkan semester yang ingin ditampilkan KRS-nya dengan format: *!krs <semester>*\nContoh: *!krs 3*`,
             message.id
           );
           return;
@@ -315,13 +326,10 @@ Anda juga dapat menjelajahi fitur lainnya dengan mengirimkan pesan *!help* untuk
         const kelasList = userKelas.semester[0].kelas.map((kelas) => {
           return `*${kelas.mata_kuliah}*\nHari: *${
             kelas.hari.charAt(0).toUpperCase() + kelas.hari.slice(1)
-          }*\nJam: *${new Date(kelas.waktu_mulai).toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })} - ${new Date(kelas.waktu_selesai).toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}*\nRuang: *${kelas.ruang}*\nDosen: *${kelas.dosen}*\n\n`;
+          }*\nJam:  *${formatTime(new Date(kelas.waktu_mulai))} - ${formatTime(
+            new Date(kelas.waktu_selesai)
+          )}
+          *\nRuang: *${kelas.ruang}*\nDosen: *${kelas.dosen}*\n\n`;
         });
 
         const krsMessage = `Kartu Rencana Studi (KRS) untuk semester *${semester}*:\n\n${kelasList.join(
@@ -357,6 +365,248 @@ Anda juga dapat menjelajahi fitur lainnya dengan mengirimkan pesan *!help* untuk
         )}`;
         await syaki.reply(message.from, semesterMessage, message.id);
         break;
+      case "inputkrs":
+        if (!q.includes("|")) {
+          await syaki.reply(
+            message.from,
+            `Format salah. Gunakan format: *!inputkrs <semester>|<copied_data>*\nContoh: *!inputkrs 3|copied_data*`,
+            message.id
+          );
+          return;
+        }
+        let [semesterInput, copiedData] = q
+          .split("|")
+          .map((item) => item.trim());
+        if (!semesterInput || !copiedData) {
+          await syaki.reply(
+            message.from,
+            `Format salah. Gunakan format: *!inputkrs <semester>|<copied_data>*\nContoh: *!inputkrs 3|copied_data*`,
+            message.id
+          );
+          return;
+        }
+        const semesterNumber = Number(semesterInput);
+        if (isNaN(semesterNumber)) {
+          await syaki.reply(
+            message.from,
+            `Semester harus berupa angka. Gunakan format: *!inputkrs <semester>|<copied_data>*\nContoh: *!inputkrs 3|copied_data*`,
+            message.id
+          );
+          return;
+        }
+        const userInput = await checkUser(syaki, message);
+        if (!userInput) return;
+        const existingSemester = await prisma.semester.findFirst({
+          where: {
+            nama: semesterNumber,
+            user_id: userInput.id,
+          },
+        });
+
+        if (!existingSemester) {
+          await syaki.reply(
+            message.from,
+            `Semester *${semesterNumber}* tidak ditemukan. Pastikan anda telah memasukkan semester yang benar.`,
+            message.id
+          );
+          return;
+        }
+
+        await syaki.reply(
+          message.from,
+          `Memproses KRS untuk semester *${semesterNumber}*...`,
+          message.id
+        );
+
+        // proses to api
+        const response = await fetcher(process.env.API_URL + "/v1/krs/llm", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: {
+            semester: semesterNumber,
+            jadwal_kuliah: copiedData,
+            user_id: userInput.id,
+          },
+        });
+
+        console.log(color("[RESPONSE]", "#00FF00"), response);
+        if (!response) {
+          await syaki.reply(
+            message.from,
+            `Gagal memproses KRS. Pastikan format data yang anda masukkan benar.`,
+            message.id
+          );
+          return;
+        } else {
+          await syaki.reply(
+            message.from,
+            `KRS untuk semester *${semesterNumber}* telah berhasil diproses. Berikut adalah daftar kelas yang telah ditambahkan:\n\n${response
+              .map(
+                (kelas: any) =>
+                  `*${kelas.mata_kuliah}*\nHari: *${
+                    kelas.hari.charAt(0).toUpperCase() + kelas.hari.slice(1)
+                  }*\nJam: *${formatTime(
+                    new Date(kelas.waktu_mulai)
+                  )}* - *${formatTime(
+                    new Date(kelas.waktu_selesai)
+                  )}*\nRuang: *${kelas.ruang}*\nDosen: *${
+                    kelas.dosen
+                  }*\nKelas: *${kelas.kelas}*\nKode: *${kelas.kode}*\n\n`
+              )
+              .join("")}`,
+            message.id
+          );
+        }
+
+        break;
+      case "addsemester":
+        if (!q) {
+          await syaki.reply(
+            message.from,
+            `Silakan masukkan semester yang ingin ditambahkan dengan format: *!addsemester <semester>*\nContoh: *!addsemester 3*`,
+            message.id
+          );
+          return;
+        }
+        const semesterToAdd = q.trim();
+        const userToAddSemester = await checkUser(syaki, message);
+        if (!userToAddSemester) return;
+        const existingSemesterToAdd = await prisma.semester.findFirst({
+          where: {
+            nama: Number(semesterToAdd),
+            user_id: userToAddSemester.id,
+          },
+        });
+        if (existingSemesterToAdd) {
+          await syaki.reply(
+            message.from,
+            `Semester *${semesterToAdd}* sudah ada. Silakan gunakan semester yang berbeda.`,
+            message.id
+          );
+          return;
+        }
+        // Tambahkan semester baru, gunakan semester terakhir sebagai referensi
+        const lastSemester = await prisma.semester.findFirst({
+          where: {
+            user_id: userToAddSemester.id,
+          },
+          orderBy: {
+            nama: "desc",
+          },
+        });
+        // jika semester terakhir adalah 3, dan user menginput semester 8, tambahkan semester 4, 5, 6, 7, 8
+        if (lastSemester) {
+          const lastSemesterNumber = lastSemester.nama;
+          const newSemesterNumbers = [];
+          for (
+            let i = lastSemesterNumber + 1;
+            i <= Number(semesterToAdd);
+            i++
+          ) {
+            newSemesterNumbers.push(i);
+          }
+
+          // Buat semester baru dalam satu transaksi
+          await prisma.$transaction(
+            newSemesterNumbers.map((semesterNumber) =>
+              prisma.semester.create({
+                data: {
+                  id: uuid(),
+                  nama: semesterNumber,
+                  user_id: userToAddSemester.id,
+                },
+              })
+            )
+          );
+          await syaki.reply(
+            message.from,
+            `Semester ${newSemesterNumbers.join(
+              ", "
+            )} telah berhasil ditambahkan.`,
+            message.id
+          );
+        } else {
+          await prisma.semester.create({
+            data: {
+              id: uuid(),
+              nama: Number(semesterToAdd),
+              user_id: userToAddSemester.id,
+            },
+          });
+          await syaki.reply(
+            message.from,
+            `Semester *${semesterToAdd}* telah berhasil ditambahkan.`,
+            message.id
+          );
+        }
+        break;
+      case "deletesemester":
+        if (!q) {
+          await syaki.reply(
+            message.from,
+            `Silakan masukkan semester yang ingin dihapus dengan format: *!deletesemester <semester>*\nContoh: *!deletesemester 3*`,
+            message.id
+          );
+          return;
+        }
+        const semesterToDelete = q.trim();
+        const userToDeleteSemester = await checkUser(syaki, message);
+        if (!userToDeleteSemester) return;
+        const existingSemesterToDelete = await prisma.semester.findFirst({
+          where: {
+            nama: Number(semesterToDelete),
+            user_id: userToDeleteSemester.id,
+          },
+        });
+        if (!existingSemesterToDelete) {
+          await syaki.reply(
+            message.from,
+            `Semester *${semesterToDelete}* tidak ditemukan. Pastikan anda telah memasukkan semester yang benar.`,
+            message.id
+          );
+          return;
+        }
+        // Hapus semester, beserta semester diatasnya
+        // Hapus kelas yang terkait dengan semester tersebut
+        await prisma.$transaction(async (tx) => {
+          // get all semesters above the semester to delete
+          const semestersToDelete = await tx.semester.findMany({
+            where: {
+              nama: {
+                gte: Number(semesterToDelete),
+              },
+              user_id: userToDeleteSemester.id,
+            },
+          });
+          // delete all classes related to the semesters
+          await tx.kelas.deleteMany({
+            where: {
+              semester_id: {
+                in: semestersToDelete.map((s) => s.id),
+              },
+            },
+          });
+          // delete all semesters
+          await tx.semester.deleteMany({
+            where: {
+              nama: {
+                gte: Number(semesterToDelete),
+              },
+              user_id: userToDeleteSemester.id,
+            },
+          });
+          await syaki.reply(
+            message.from,
+            `Semester *${semestersToDelete
+              .map((s) => s.nama)
+              .join(", ")}* telah berhasil dihapus.`,
+            message.id
+          );
+        });
+        break;
+
       default:
         if (isCommand) {
           await syaki.reply(
@@ -369,6 +619,25 @@ Anda juga dapat menjelajahi fitur lainnya dengan mengirimkan pesan *!help* untuk
   } catch (error) {
     console.error("Error in msgHandler:", error);
   }
+};
+
+const checkUser = async (syaki: Client, message: Message) => {
+  const from = parsingPhoneNumber(message.from);
+  const user = await prisma.user.findFirst({
+    where: {
+      no_whatsapp: from,
+    },
+  });
+
+  if (!user) {
+    await syaki.reply(
+      message.from,
+      `Mohon maaf, anda belum terdaftar. Silakan lakukan pendaftaran terlebih dahulu melalui tautan berikut: *${process.env.FRONTEND_URL}/auth/signup*`,
+      message.id
+    );
+    return false;
+  }
+  return user;
 };
 
 const requestAssistant = async (messages: any[], userContent: any) => {

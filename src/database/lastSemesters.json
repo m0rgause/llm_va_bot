@@ -152,82 +152,9 @@
     "phoneNumber": "6285881861075@c.us",
     "lastSemester": [
       {
-        "semesterId": "5e2b4b4c-6ec3-4458-9715-801ada436bf5",
-        "semesterName": "4",
-        "classes": [
-          {
-            "classId": "95483c4d-0f9c-49be-a795-fef42f7ef8f7",
-            "subject": "PEMROGRAMAN SMART WEB",
-            "day": "selasa",
-            "startTime": "1970-01-01T10:15:00.000Z",
-            "endTime": "1970-01-01T12:45:00.000Z",
-            "room": "D-206",
-            "lecturer": "Muhaimin Hasanudin, S.T, M.Kom"
-          },
-          {
-            "classId": "7ad10834-9e55-4259-9a28-27e19764d914",
-            "subject": "MACHINE LEARNING",
-            "day": "selasa",
-            "startTime": "1970-01-01T13:15:00.000Z",
-            "endTime": "1970-01-01T15:45:00.000Z",
-            "room": "D-404",
-            "lecturer": "Rushendra, Ir., S.Kom, MT"
-          },
-          {
-            "classId": "cc3c8ab3-a66c-4a2b-a36f-a19919775f44",
-            "subject": "ANALISA BERORIENTASI OBJEK",
-            "day": "rabu",
-            "startTime": "1970-01-01T07:30:00.000Z",
-            "endTime": "1970-01-01T10:00:00.000Z",
-            "room": "E-207",
-            "lecturer": "Anis Cherid, SE, MTI"
-          },
-          {
-            "classId": "830e3432-c455-4132-927a-6596afc4a129",
-            "subject": "PENGANTAR CLOUD COMPUTING",
-            "day": "kamis",
-            "startTime": "1970-01-01T07:30:00.000Z",
-            "endTime": "1970-01-01T10:00:00.000Z",
-            "room": "E-204",
-            "lecturer": "Indra Ranggadara, S.Kom, MT, MMSI"
-          },
-          {
-            "classId": "f4986daf-8e7b-4e0a-bc83-b54a8c609b96",
-            "subject": "PENGOLAHAN CITRA",
-            "day": "kamis",
-            "startTime": "1970-01-01T10:15:00.000Z",
-            "endTime": "1970-01-01T12:45:00.000Z",
-            "room": "D-402",
-            "lecturer": "Muhammad Rifqi, S.Kom, M.Kom"
-          },
-          {
-            "classId": "16a8885c-c362-47f6-bfea-54cf5e471790",
-            "subject": "PEMODELAN 2D/3D",
-            "day": "kamis",
-            "startTime": "1970-01-01T13:15:00.000Z",
-            "endTime": "1970-01-01T15:45:00.000Z",
-            "room": "D-206",
-            "lecturer": "Ari Saputro, M.Kom"
-          },
-          {
-            "classId": "9259a0bf-9675-4a61-a3c0-c12f97685ea6",
-            "subject": "KEWARGANEGARAAN",
-            "day": "jumat",
-            "startTime": "1970-01-01T07:30:00.000Z",
-            "endTime": "1970-01-01T09:10:00.000Z",
-            "room": "B-307",
-            "lecturer": "Sukarno Bahat Nauli, M.Kom"
-          },
-          {
-            "classId": "27ca25b5-3bcf-4ce0-92fd-61512f015c5e",
-            "subject": "PENDIDIKAN ANTI KORUPSI DAN ETIK UMB",
-            "day": "jumat",
-            "startTime": "1970-01-01T09:30:00.000Z",
-            "endTime": "1970-01-01T11:10:00.000Z",
-            "room": "D-308",
-            "lecturer": "R. Joko Sugiharjo, Ir. MM"
-          }
-        ]
+        "semesterId": "00b8ce70-bbce-4371-bbbe-77f8265f0565",
+        "semesterName": "5",
+        "classes": []
       }
     ]
   }
