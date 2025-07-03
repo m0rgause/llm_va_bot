@@ -1,0 +1,234 @@
+[
+  {
+    "userId": "ef5dd5d5-ce60-41d5-8b67-52237c08105d",
+    "userName": "Sabita",
+    "phoneNumber": "6287788222452@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "072f6bf8-d611-466d-b6b2-0b31b8f6d364",
+        "semesterName": "1",
+        "classes": [
+          {
+            "classId": "c9b350e5-47fd-4dea-b2b0-be5aa69ec942",
+            "subject": "Ronbun",
+            "day": "sabtu",
+            "startTime": "1970-01-01T17:39:00.000Z",
+            "endTime": "1970-01-01T17:45:00.000Z",
+            "room": "U",
+            "lecturer": "U"
+          },
+          {
+            "classId": "11f639f3-d2f9-4a5f-bb7c-6707cc158962",
+            "subject": "Jajaja",
+            "day": "sabtu",
+            "startTime": "1970-01-01T17:50:00.000Z",
+            "endTime": "1970-01-01T17:59:00.000Z",
+            "room": "7",
+            "lecturer": "7"
+          },
+          {
+            "classId": "68c6bae3-41c4-495c-8cf9-fa107f2d2bd7",
+            "subject": "Jjhh",
+            "day": "minggu",
+            "startTime": "1970-01-01T15:07:00.000Z",
+            "endTime": "1970-01-01T15:10:00.000Z",
+            "room": "Y",
+            "lecturer": "H"
+          },
+          {
+            "classId": "d24f8110-daf0-4484-8b23-707b2c5aa82c",
+            "subject": "Aaaaaa",
+            "day": "minggu",
+            "startTime": "1970-01-01T15:51:00.000Z",
+            "endTime": "1970-01-01T16:00:00.000Z",
+            "room": "Ggghqha",
+            "lecturer": "Ahahah"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "84339e5e-2e09-4568-ba77-662f04e2c0dd",
+    "userName": "Ismaelia",
+    "phoneNumber": "62895636621996@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "183b280b-a70d-4e03-be4a-d178f3697d81",
+        "semesterName": "1",
+        "classes": [
+          {
+            "classId": "a9bdd060-43a4-43ca-bc67-eda6b97818bc",
+            "subject": "Bimbingan skripsi ",
+            "day": "rabu",
+            "startTime": "1970-01-01T14:10:00.000Z",
+            "endTime": "1970-01-01T16:15:00.000Z",
+            "room": "801",
+            "lecturer": "pa rozak ganteng"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "483a4d74-8645-444a-a651-9e108bd9024a",
+    "userName": "Kikis",
+    "phoneNumber": "628588186107@c.us",
+    "lastSemester": []
+  },
+  {
+    "userId": "7b0cc372-8030-45ba-bd64-a0f1c74be8ed",
+    "userName": "Nacha",
+    "phoneNumber": "6289635988543@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "09f48e25-6e14-4e50-ba36-a7c660c08275",
+        "semesterName": "1",
+        "classes": []
+      }
+    ]
+  },
+  {
+    "userId": "f92ead0a-8288-417a-9308-ac44f6e4fa9c",
+    "userName": "dea",
+    "phoneNumber": "62812345667@c.us",
+    "lastSemester": []
+  },
+  {
+    "userId": "8dbde14c-6f51-490e-825c-b710602d77b5",
+    "userName": "Regi",
+    "phoneNumber": "6285810387832@c.us",
+    "lastSemester": []
+  },
+  {
+    "userId": "28bdd9ae-3c6b-46ff-93a1-f1026078b0d3",
+    "userName": "celsi alisa ",
+    "phoneNumber": "6289660422922@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "c437e7a2-a898-4fdc-9fa1-9f42ca9c2f7a",
+        "semesterName": "1",
+        "classes": []
+      }
+    ]
+  },
+  {
+    "userId": "017fe94c-c3c1-4c40-ae02-bdf01ae4f871",
+    "userName": "Ridha Talasya Widyanti",
+    "phoneNumber": "628812304435@c.us",
+    "lastSemester": []
+  },
+  {
+    "userId": "ab565e0c-8f1c-43a5-b9c5-f3a18fa4d5a4",
+    "userName": "Mukhlis Hasyim",
+    "phoneNumber": "6285888811111@c.us",
+    "lastSemester": []
+  },
+  {
+    "userId": "0545000d-9697-41b4-8fe7-b716a49b3202",
+    "userName": "Ahmad Baihaki Nur",
+    "phoneNumber": "6285881861075222@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "8e123a37-c1b0-4336-b401-3d7128d37c1b",
+        "semesterName": "2",
+        "classes": [
+          {
+            "classId": "ee400628-a422-4b7b-b48c-e11bcd4d176e",
+            "subject": "Metopen",
+            "day": "rabu",
+            "startTime": "1970-01-01T15:05:00.000Z",
+            "endTime": "1970-01-01T17:30:00.000Z",
+            "room": "123",
+            "lecturer": "Pak Anis"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "df43283f-e4da-4c01-9a57-8c36cbd93265",
+    "userName": "Ahmad Baihaki Nur",
+    "phoneNumber": "6285881861075@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "5e2b4b4c-6ec3-4458-9715-801ada436bf5",
+        "semesterName": "4",
+        "classes": [
+          {
+            "classId": "95483c4d-0f9c-49be-a795-fef42f7ef8f7",
+            "subject": "PEMROGRAMAN SMART WEB",
+            "day": "selasa",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "D-206",
+            "lecturer": "Muhaimin Hasanudin, S.T, M.Kom"
+          },
+          {
+            "classId": "7ad10834-9e55-4259-9a28-27e19764d914",
+            "subject": "MACHINE LEARNING",
+            "day": "selasa",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "D-404",
+            "lecturer": "Rushendra, Ir., S.Kom, MT"
+          },
+          {
+            "classId": "cc3c8ab3-a66c-4a2b-a36f-a19919775f44",
+            "subject": "ANALISA BERORIENTASI OBJEK",
+            "day": "rabu",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T10:00:00.000Z",
+            "room": "E-207",
+            "lecturer": "Anis Cherid, SE, MTI"
+          },
+          {
+            "classId": "830e3432-c455-4132-927a-6596afc4a129",
+            "subject": "PENGANTAR CLOUD COMPUTING",
+            "day": "kamis",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T10:00:00.000Z",
+            "room": "E-204",
+            "lecturer": "Indra Ranggadara, S.Kom, MT, MMSI"
+          },
+          {
+            "classId": "f4986daf-8e7b-4e0a-bc83-b54a8c609b96",
+            "subject": "PENGOLAHAN CITRA",
+            "day": "kamis",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "D-402",
+            "lecturer": "Muhammad Rifqi, S.Kom, M.Kom"
+          },
+          {
+            "classId": "16a8885c-c362-47f6-bfea-54cf5e471790",
+            "subject": "PEMODELAN 2D/3D",
+            "day": "kamis",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "D-206",
+            "lecturer": "Ari Saputro, M.Kom"
+          },
+          {
+            "classId": "9259a0bf-9675-4a61-a3c0-c12f97685ea6",
+            "subject": "KEWARGANEGARAAN",
+            "day": "jumat",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T09:10:00.000Z",
+            "room": "B-307",
+            "lecturer": "Sukarno Bahat Nauli, M.Kom"
+          },
+          {
+            "classId": "27ca25b5-3bcf-4ce0-92fd-61512f015c5e",
+            "subject": "PENDIDIKAN ANTI KORUPSI DAN ETIK UMB",
+            "day": "jumat",
+            "startTime": "1970-01-01T09:30:00.000Z",
+            "endTime": "1970-01-01T11:10:00.000Z",
+            "room": "D-308",
+            "lecturer": "R. Joko Sugiharjo, Ir. MM"
+          }
+        ]
+      }
+    ]
+  }
+]
