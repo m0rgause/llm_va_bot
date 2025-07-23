@@ -113,34 +113,82 @@
     ]
   },
   {
-    "userId": "017fe94c-c3c1-4c40-ae02-bdf01ae4f871",
-    "userName": "Ridha Talasya Widyanti",
-    "phoneNumber": "628812304435@c.us",
-    "lastSemester": []
-  },
-  {
     "userId": "ab565e0c-8f1c-43a5-b9c5-f3a18fa4d5a4",
     "userName": "Mukhlis Hasyim",
     "phoneNumber": "6285888811111@c.us",
     "lastSemester": []
   },
   {
-    "userId": "0545000d-9697-41b4-8fe7-b716a49b3202",
-    "userName": "Ahmad Baihaki Nur",
-    "phoneNumber": "6285881861075222@c.us",
+    "userId": "8a88b88f-3f0d-4de2-b38b-40d574e38352",
+    "userName": "Ridha",
+    "phoneNumber": "628812304435@c.us",
     "lastSemester": [
       {
-        "semesterId": "8e123a37-c1b0-4336-b401-3d7128d37c1b",
-        "semesterName": "2",
+        "semesterId": "77689025-86a7-4e80-a75b-63fceb7c89fd",
+        "semesterName": "1",
         "classes": [
           {
-            "classId": "ee400628-a422-4b7b-b48c-e11bcd4d176e",
-            "subject": "Metopen",
-            "day": "rabu",
-            "startTime": "1970-01-01T15:05:00.000Z",
-            "endTime": "1970-01-01T17:30:00.000Z",
-            "room": "123",
-            "lecturer": "Pak Anis"
+            "classId": "06ed61d1-c02b-4392-8bb4-085655477c91",
+            "subject": "SISTEM BASIS DATA",
+            "day": "senin",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T10:00:00.000Z",
+            "room": "MapsM-401",
+            "lecturer": "Diky Firdaus, S.Kom, MM"
+          },
+          {
+            "classId": "6a881f74-7c74-4e5b-9ea8-3458abd47661",
+            "subject": "KALKULUS",
+            "day": "senin",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "MapsM-401",
+            "lecturer": "Achmad Kodar, Drs. MT"
+          },
+          {
+            "classId": "efb74277-097f-492e-8e78-5147398a4657",
+            "subject": "STATISTIK DAN PROBABILITAS",
+            "day": "senin",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "MapsM-401",
+            "lecturer": "Eliyani, Dr. Ir., M.Kom."
+          },
+          {
+            "classId": "4a9673e1-88e7-4d7d-9ed4-ae81b218c418",
+            "subject": "ALGORITMA DAN PEMROGRAMAN",
+            "day": "selasa",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T10:00:00.000Z",
+            "room": "MapsM-401",
+            "lecturer": "Yuwan Jumaryadi, S.Kom, MM, M.Kom"
+          },
+          {
+            "classId": "9c1c3139-98d3-4313-b729-67c0ee677843",
+            "subject": "DASAR KEAMANAN KOMPUTER",
+            "day": "selasa",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "MapsM-401",
+            "lecturer": "Sabar Rudiarto, M.Kom"
+          },
+          {
+            "classId": "a16ae0ac-ae9e-4a8b-940c-b487358b0c7a",
+            "subject": "BAHASA INGGRIS I",
+            "day": "selasa",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "MapsM-401",
+            "lecturer": "Dian Ariadita Fitryati, S.IKom., M.Pd"
+          },
+          {
+            "classId": "3acbd845-b5b2-4db0-a8e5-3f0ae9f4227b",
+            "subject": "PENDIDIKAN AGAMA ISLAM",
+            "day": "jumat",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T09:10:00.000Z",
+            "room": "MapsM-401",
+            "lecturer": "Abdul Rachman, S.S, M.Pd.I"
           }
         ]
       }
@@ -149,11 +197,102 @@
   {
     "userId": "df43283f-e4da-4c01-9a57-8c36cbd93265",
     "userName": "Ahmad Baihaki Nur",
-    "phoneNumber": "6285881861075@c.us",
+    "phoneNumber": "6289983992834@c.us",
     "lastSemester": [
       {
         "semesterId": "00b8ce70-bbce-4371-bbbe-77f8265f0565",
         "semesterName": "5",
+        "classes": [
+          {
+            "classId": "2d702aba-3edb-45e9-bcd8-ff781beb14ad",
+            "subject": "PENGANTAR DATA MINING",
+            "day": "senin",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T10:00:00.000Z",
+            "room": "MapsT-003",
+            "lecturer": "Siti Maesaroh, S.Kom., M.T.I"
+          },
+          {
+            "classId": "784a35a6-95ba-4503-a46c-dd4d43391980",
+            "subject": "MATHEMATICAL TOOLS FOR DATA SCIENCE",
+            "day": "senin",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "MapsT-006",
+            "lecturer": "Muhaimin Hasanudin, S.T, M.Kom"
+          },
+          {
+            "classId": "ca8be79c-5ec1-4af5-a237-6da55cf1b055",
+            "subject": "INTERAKSI MANUSIA DAN KOMPUTER",
+            "day": "senin",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "MapsVT.D-119",
+            "lecturer": "Ida Farida, ST,M.Kom"
+          },
+          {
+            "classId": "74c614b0-9719-4926-b6f5-038225bab1ec",
+            "subject": "KOMUNIKASI DAN ETIKA PROFESI",
+            "day": "selasa",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "MapsC-308",
+            "lecturer": "Nia Kusuma Wardhani, Dr. S.Kom, MM"
+          },
+          {
+            "classId": "9ff6a778-f886-4b7f-bd83-a20bc9babeab",
+            "subject": "PEMROGRAMAN BERORIENTASI OBJEK",
+            "day": "selasa",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "MapsT-002",
+            "lecturer": "Yohanes Eka Wibawa"
+          },
+          {
+            "classId": "db010e62-e3dd-4f61-a581-ad5b76068a75",
+            "subject": "DEEP LEARNING",
+            "day": "rabu",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "MapsB-407",
+            "lecturer": "Faldy Irwiensyah, M.T.I"
+          },
+          {
+            "classId": "d8d0863c-5dde-4f64-a7e0-dfcd02ca9533",
+            "subject": "NATURAL LANGUAGE PROCESSING (NLP)",
+            "day": "rabu",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "MapsVT.D-119",
+            "lecturer": "Afiyati, Dr., S.Si, MT"
+          },
+          {
+            "classId": "e7703244-02e8-4ba1-8dc7-d3ebc4750bf5",
+            "subject": "KEWIRAUSAHAAN I",
+            "day": "jumat",
+            "startTime": "1970-01-01T09:30:00.000Z",
+            "endTime": "1970-01-01T11:10:00.000Z",
+            "room": "MapsA-403",
+            "lecturer": "Yustika Erliani, SE, MMSI"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "3dddd6b0-8eaf-48c2-bf95-026ec624798d",
+    "userName": "Ridha Talasya Widyanti",
+    "phoneNumber": "6285174358010@c.us",
+    "lastSemester": []
+  },
+  {
+    "userId": "4d23c0ce-8798-4c4a-9039-fafd53b0a3ef",
+    "userName": "Ahmad Baihaki Nur",
+    "phoneNumber": "6285881861075@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "07e2f548-fb43-49be-a5a8-2d8f37600b94",
+        "semesterName": "3",
         "classes": []
       }
     ]

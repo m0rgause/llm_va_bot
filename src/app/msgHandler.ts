@@ -75,9 +75,7 @@ export const msgHandler = async (syaki: Client, message: Message) => {
           const from = parsingPhoneNumber(message.from);
           const findUser = await prisma.user.findFirst({
             where: {
-              no_whatsapp: {
-                contains: from,
-              },
+              no_whatsapp: from,
             },
           });
 
@@ -121,9 +119,7 @@ Anda juga dapat menjelajahi fitur lainnya dengan mengirimkan pesan *!help* untuk
 
         const userToStop = await prisma.user.findFirst({
           where: {
-            no_whatsapp: {
-              contains: fromNumber,
-            },
+            no_whatsapp: fromNumber,
           },
         });
         console.log(color("[USER]", "#00FF00"), userToStop);
@@ -225,9 +221,7 @@ Anda juga dapat menjelajahi fitur lainnya dengan mengirimkan pesan *!help* untuk
         // get user data
         const userContent = await prisma.user.findFirst({
           where: {
-            no_whatsapp: {
-              contains: senderNumber,
-            },
+            no_whatsapp: parsingPhoneNumber(message.from),
           },
           include: {
             semester: {
@@ -289,9 +283,7 @@ Anda juga dapat menjelajahi fitur lainnya dengan mengirimkan pesan *!help* untuk
         const semester = q.trim();
         const userKelas = await prisma.user.findFirst({
           where: {
-            no_whatsapp: {
-              contains: parsingPhoneNumber(message.from),
-            },
+            no_whatsapp: parsingPhoneNumber(message.from),
           },
           include: {
             semester: {
