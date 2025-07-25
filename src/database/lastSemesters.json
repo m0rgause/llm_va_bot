@@ -296,5 +296,81 @@
         "classes": []
       }
     ]
+  },
+  {
+    "userId": "c815b11a-8e4c-4832-9cdc-0d801fe21d98",
+    "userName": "NATHAN",
+    "phoneNumber": "6289635222132@c.us",
+    "lastSemester": [
+      {
+        "semesterId": "5016d5f4-23ef-484c-afbb-f413f018b6b3",
+        "semesterName": "1",
+        "classes": [
+          {
+            "classId": "21dbc1e2-e475-4151-8aba-ab0914f459df",
+            "subject": "ALGORITMA DAN PEMROGRAMAN",
+            "day": "senin",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T10:00:00.000Z",
+            "room": "D-204",
+            "lecturer": "Umniy Salamah, S.T.,MMSI"
+          },
+          {
+            "classId": "9f49d03f-de48-4898-bc60-d0d7a2d34b37",
+            "subject": "SISTEM BASIS DATA",
+            "day": "senin",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "C-419",
+            "lecturer": "Wawan Gunawan, S.Kom, MT., M.Kom."
+          },
+          {
+            "classId": "3ed29692-98d5-478d-a5d0-55a29cff3525",
+            "subject": "BAHASA INGGRIS I",
+            "day": "senin",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T14:55:00.000Z",
+            "room": "D-304",
+            "lecturer": "Muhammad Abduh Almanar, M.Pd"
+          },
+          {
+            "classId": "2740d607-70bd-418d-8658-0eb7458d97ae",
+            "subject": "STATISTIK DAN PROBABILITAS",
+            "day": "selasa",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T10:00:00.000Z",
+            "room": "D-407",
+            "lecturer": "Muhammad Rifqi, S.Kom, M.Kom"
+          },
+          {
+            "classId": "19ad71a5-8a14-4a04-841f-ef880fed9184",
+            "subject": "KALKULUS",
+            "day": "selasa",
+            "startTime": "1970-01-01T10:15:00.000Z",
+            "endTime": "1970-01-01T12:45:00.000Z",
+            "room": "D-408",
+            "lecturer": "Dwi Wulandari Sari, S.Kom, M.Kom"
+          },
+          {
+            "classId": "b10bacd7-10cc-4c70-a71e-cc74cb493170",
+            "subject": "DASAR KEAMANAN KOMPUTER",
+            "day": "selasa",
+            "startTime": "1970-01-01T13:15:00.000Z",
+            "endTime": "1970-01-01T15:45:00.000Z",
+            "room": "D-407",
+            "lecturer": "Sabar Rudiarto, M.Kom"
+          },
+          {
+            "classId": "9b6be2cc-f511-4743-8326-be7860519c3b",
+            "subject": "PENDIDIKAN AGAMA ISLAM",
+            "day": "jumat",
+            "startTime": "1970-01-01T07:30:00.000Z",
+            "endTime": "1970-01-01T09:10:00.000Z",
+            "room": "D-303",
+            "lecturer": "Ahmad Gozali, SHI, MH"
+          }
+        ]
+      }
+    ]
   }
 ]
